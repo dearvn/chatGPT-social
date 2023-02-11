@@ -20,3 +20,12 @@ $consumerSecret = '';
 $accessToken = '';
 $accessTokenSecret = '';
 `
+
+
+# Get token of Fanpage
+
+https://developers.facebook.com/tools/explorer/
+
+Expire token to 2 months
+https://developers.facebook.com/tools/debug/accesstoken/
+
