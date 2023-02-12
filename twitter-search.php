@@ -2,7 +2,7 @@
 
 include_once './twitter.php';
 
-$tokenGPT = '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';
+$tokenGPT = '';
 
 $tokenGPT = '';
 
