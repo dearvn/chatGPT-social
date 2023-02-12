@@ -180,14 +180,18 @@ foreach ($rss->channel->item as $item) {
 
     $image_url = post_image_chatGPT($title, $tokenGPT);
 
-    if (strlen($content) > 280) {
+	
+	if (strlen($content) > 280) {
         $content = substr_words($content, 260);
     }
 
     $data = [
-        'description' => $content,
-        'image_url' => $image_url
+        'description' => $content
     ];
+	$file_headers = @get_headers($image_url);
+	if(!empty($file_headers) && strpos($file_headers[0], 'HTTP/1.1 40') === false) {
+		$data['image_url'] = $image_url;
+	}
 
     $id = publishFacebook($page_id, $page_access_token, $data);
     echo $id;
